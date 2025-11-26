@@ -43,7 +43,6 @@ This repository addresses these gaps by combining **agent-oriented workflows**, 
 ---
 
 ## Architecture (High-Level)
-## High-Level Architecture
 
 The system is designed as a layered, agent-oriented AI architecture** that separates concerns between
 model execution, orchestration, decision logic, explainability, and governance.
