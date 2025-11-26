@@ -43,3 +43,38 @@ This repository addresses these gaps by combining **agent-oriented workflows**, 
 ---
 
 ## Architecture (High-Level)
+## High-Level Architecture
+
+The system is designed as a layered, agent-oriented AI architecture** that separates concerns between
+model execution, orchestration, decision logic, explainability, and governance.
+
+### 1. Data & Feature Layer
+- Structured and unstructured data sources
+- Feature preparation and validation
+- Data quality and schema checks to support downstream auditability
+
+### 2. Model & GenAI Layer
+- ML models for forecasting, anomaly detection, and decision support
+- Optional GenAI models for reasoning, summarization, or natural-language interfaces
+- Versioned models with deterministic inference paths where required
+
+### 3. Agent Orchestration Layer
+- Agents responsible for task routing, tool invocation, and decision delegation
+- Explicit control over agent boundaries and responsibilities
+- Support for multi-step, conditional workflows rather than single-prompt executions
+
+### 4. Decision & Explainability Layer
+- Business logic layered on top of model or agent outputs
+- Integrated explainability (e.g., SHAP/LIME-style reasoning, rule traces)
+- Human-interpretable artifacts to support review and oversight
+
+### 5. Governance, Monitoring & Audit Layer
+- Centralized logging of inputs, outputs, model versions, and agent decisions
+- Risk classification and documentation aligned with EU AI Act principles
+- Monitoring hooks for performance drift, anomalies, and compliance checks
+
+### 6. Integration Layer
+- APIs and event-driven interfaces for downstream systems
+- Clear separation between inference services and consumer applications
+- Designed for incremental hardening and production rollout
+
